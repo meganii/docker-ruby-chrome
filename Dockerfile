@@ -15,14 +15,14 @@ RUN echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/so
 
 RUN apt-get update
 
-RUN apt-get -y install ruby2.1 ruby2.1-dev google-chrome-stable
+RUN apt-get -y install ruby2.4 ruby2.4-dev google-chrome-unstable
 
 # Dependencies to make "headless" chrome/selenium work:
 RUN apt-get -y install xvfb gtk2-engines-pixbuf
 RUN apt-get -y install xfonts-cyrillic xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable
 
 # chrome driver
-RUN wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/2.16/chromedriver_linux64.zip
+RUN wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/2.30/chromedriver_linux64.zip
 RUN unzip /tmp/chromedriver.zip chromedriver -d /usr/bin/
 RUN chmod ugo+rx /usr/bin/chromedriver
 
